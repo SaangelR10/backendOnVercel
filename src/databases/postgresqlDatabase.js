@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
+import pg from 'pg';
 
 dotenv.config();
 
@@ -7,6 +8,7 @@ dotenv.config();
 const sequelize = new Sequelize('postgresql://postgres.bxhjfgboblhpodkggymx:sERGIOANGEL1*@aws-0-us-east-1.pooler.supabase.com:6543/postgres', {
   dialect: 'postgres',
   logging: false,
+  dialectModule: pg
 });
 
 // Function for connecting to PostgreSQL
