@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Connect to PostgreSQL database from .env
-const sequelize = new Sequelize('postgres://usuario:contraseña@host:5432/nombre_base_datos', {
+const sequelize = new Sequelize('postgresql://postgres.bxhjfgboblhpodkggymx:sERGIOANGEL1*@aws-0-us-east-1.pooler.supabase.com:6543/postgres', {
   dialect: 'postgres',
   logging: false,
 });
