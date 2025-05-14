@@ -4,9 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Connect to PostgreSQL database from .env
-const sequelize = new Sequelize(process.env.DATABASE_POSTGRESQL, {
+const sequelize = new Sequelize('postgres://usuario:contraseña@host:5432/nombre_base_datos', {
   dialect: 'postgres',
-  logging: false, 
+  logging: false,
 });
 
 // Function for connecting to PostgreSQL
