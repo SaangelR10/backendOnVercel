@@ -5,17 +5,16 @@ dotenv.config();
 
 // Function for connecting to MongoDB
 const connectMongoDB = async () => {
-  // Constants from .env
-  const mongoUri = process.env.DATABASE_MONGO;
-  // If DATABASE_MONGO is not defined
-  if (!mongoUri) {
-    console.error('DATABASE_MONGO is not defined in .env file');
-    process.exit(1);
-  }
+  // URL hardcodeada (reemplaza con tu URL real)
+  const mongoUri = 'mongodb+srv://mamilo:12345@tesis.dh0bt.mongodb.net/?retryWrites=true&w=majority&appName=Tesis';
+
+  // Log para verificar la URL
+  console.log('DATABASE_MONGO:', mongoUri);
+
   // Connect to MongoDB
   try {
     await mongoose.connect(mongoUri);
-    console.log('MongoDB connected');
+    console.log('MongoDB conectado');
   } catch (error) {
     // If there is an error
     console.error('MongoDB connection error:', error);
