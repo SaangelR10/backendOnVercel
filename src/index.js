@@ -18,6 +18,8 @@ app.use(cors({
   credentials: true, // Si usas cookies o autenticación basada en sesiones
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.use(express.json());
 // Conectar a MongoDB
 connectMongoDB();
 
@@ -26,7 +28,6 @@ connectPostgreSQL();
 sequelize.options.logging = console.log; // Habilitar logs de Sequelize
 SensorData.sync({ alter: false }); // Sincronizar sin alterar la tabla
 
-app.use(express.json());
 
 // Endpoint for root route
 app.get('/', (req, res) => {
