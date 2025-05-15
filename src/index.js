@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cors from 'cors';
 import connectMongoDB from './databases/mongoDatabase.js';
 import { connectPostgreSQL, sequelize } from './databases/postgresqlDatabase.js';
 import authRoutes from './routes/authRoutes.js';
@@ -10,7 +11,11 @@ import SensorData from './models/sensorData.js';
 dotenv.config();
 
 const app = express();
-
+app.use(cors({
+  origin: ['https://frontend.vercel.app'], // Reemplaza con el dominio de tu frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, // Si usas cookies o autenticación basada en sesiones
+}));
 // Conectar a MongoDB
 connectMongoDB();
 
