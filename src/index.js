@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import cors from 'cors';
 import connectMongoDB from './databases/mongoDatabase.js';
 import { connectPostgreSQL, sequelize } from './databases/postgresqlDatabase.js';
 import authRoutes from './routes/authRoutes.js';
