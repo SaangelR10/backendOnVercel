@@ -26,7 +26,6 @@ connectPostgreSQL();
 sequelize.options.logging = console.log; // Habilitar logs de Sequelize
 SensorData.sync({ alter: false }); // Sincronizar sin alterar la tabla
 
-app.use(cors());
 app.use(express.json());
 
 // Endpoint for root route
