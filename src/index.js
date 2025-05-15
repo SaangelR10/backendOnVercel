@@ -11,9 +11,12 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ['https://frontend.vercel.app'], // Reemplaza con el dominio de tu frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: [
+    'https://front-deploy-eight.vercel.app', // Dominio del frontend
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // Si usas cookies o autenticación basada en sesiones
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 // Conectar a MongoDB
 connectMongoDB();
