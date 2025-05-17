@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 app.use(cors({
   origin: [
-    'https://front-on-vercel-b7hll950x-sergios-projects-04bff688.vercel.app', // Dominio del frontend
+    'https://front-on-vercel-git-main-sergios-projects-04bff688.vercel.app', // Dominio del frontend
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true, // Si usas cookies o autenticación basada en sesiones
