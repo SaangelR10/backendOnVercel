@@ -12,7 +12,7 @@ const findUniqueDevices = async () => {
 const findLatestDataByDevice = async (device) => {
   return await SensorData.findOne({
     where: { device: { [Sequelize.Op.iLike]: device } },
-    order: Sequelize.literal('random()'),
+    order: [['ts', 'DESC']], // Ordenar por timestamp descendente para obtener el dato más reciente
   });
 };
 
@@ -20,7 +20,7 @@ const findLatestDataByDevice = async (device) => {
 const findHistoryByDevice = async (device) => {
   return await SensorData.findAll({
     where: { device: { [Sequelize.Op.iLike]: device } },
-    order: [['ts', 'DESC']],
+    order: [['ts', 'ASC']], // Orden ascendente (ya ajustado anteriormente)
     limit: 100,
   });
 };
