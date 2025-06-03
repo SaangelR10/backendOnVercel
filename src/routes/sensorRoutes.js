@@ -10,7 +10,7 @@ const router = express.Router();
 // Route for getting devices
 router.get('/devices', authMiddleware, sensorController.getDevices);
 // Route for getting realtime data by device
-router.get('/realtime/:device', sensorController.getRealtimeData);
+router.get('/realtime/:device', authMiddleware,sensorController.getRealtimeData);
 // Route for getting history data by device
 router.get('/history/:device', authMiddleware, sensorController.getHistoryData);
 

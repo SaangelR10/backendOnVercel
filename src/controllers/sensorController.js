@@ -21,7 +21,6 @@ const getRealtimeData = async (req, res) => {
     try {
         // Get realtime data
         const data = await sensorService.getRealtimeData(device);
-        console.log('Realtime data:', data);
 
         // Add prediction fields for co, humidity, smoke, temp, and lpg
         const dataWithPredictions = {
