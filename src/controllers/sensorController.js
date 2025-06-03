@@ -21,6 +21,7 @@ const getRealtimeData = async (req, res) => {
     try {
         // Get realtime data
         const data = await sensorService.getRealtimeData(device);
+        console.log('Realtime data:', data);
         // Return realtime data
         res.json(data);
     } catch (error) {
